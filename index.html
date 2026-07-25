@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dawit Kassahun — creator / developer / editor</title>
+<meta name="description" content="Portfolio of Dawit Kassahun — web design, development, and high-end video editing." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg: '#08090b',
+          surface: '#0e1116',
+          surface2: '#111319',
+          border: 'rgba(255,255,255,0.08)',
+          borderStrong: 'rgba(255,255,255,0.14)',
+          txt: '#f4f5f7',
+          muted: '#8a8f98',
+          faint: '#5c626e',
+          accentA: '#7c6cf6',
+          accentB: '#4d9dff',
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root {
+    --accent-a: #7c6cf6;
+    --accent-b: #4d9dff;
+  }
+
+  * { scroll-behavior: smooth; }
+
+  html, body {
+    background: #08090b;
+    color: #f4f5f7;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Background grid + aurora ---------- */
+  .bg-grid {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 10%, transparent 70%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 10%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .aurora {
+    position: absolute;
+    z-index: 0;
+    width: 1200px;
+    height: 700px;
+    top: -320px;
+    left: 50%;
+    transform: translateX(-50%);
+    background:
+      radial-gradient(closest-side, rgba(124,108,246,0.35), transparent 70%),
+      radial-gradient(closest-side, rgba(77,157,255,0.28), transparent 65%);
+    background-position: 30% 40%, 70% 60%;
+    background-repeat: no-repeat;
+    filter: blur(60px);
+    pointer-events: none;
+    animation: drift 18s ease-in-out infinite alternate;
+  }
+
+  @keyframes drift {
+    0%   { transform: translateX(-52%) translateY(0px) scale(1); }
+    100% { transform: translateX(-48%) translateY(20px) scale(1.05); }
+  }
+
+  /* ---------- Nav ---------- */
+  .nav-blur {
+    background: rgba(8,9,11,0.7);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--tw-border-opacity, rgba(255,255,255,0.07));
+  }
+
+  /* ---------- Glow border buttons ---------- */
+  .btn-primary {
+    position: relative;
+    background: linear-gradient(180deg, #8c7bff 0%, #6c56f0 100%);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.25) inset, 0 0 0 1px rgba(124,108,246,0.4), 0 8px 24px -8px rgba(124,108,246,0.55);
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+  }
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.08);
+    box-shadow: 0 1px 0 0 rgba(255,255,255,0.3) inset, 0 0 0 1px rgba(124,108,246,0.55), 0 10px 30px -6px rgba(124,108,246,0.7);
+  }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
+  }
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: rgba(255,255,255,0.22);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- Spotlight cards ---------- */
+  .spot-card {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01));
+    border: 1px solid rgba(255,255,255,0.08);
+    overflow: hidden;
+    transition: border-color .3s ease, transform .35s ease;
+  }
+  .spot-card::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1px;
+    background: radial-gradient(360px circle at var(--x, 50%) var(--y, 50%), rgba(140,123,255,0.55), transparent 45%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+  }
+  .spot-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(500px circle at var(--x, 50%) var(--y, 50%), rgba(124,108,246,0.09), transparent 60%);
+    opacity: 0;
+    transition: opacity .35s ease;
+    pointer-events: none;
+  }
+  .spot-card:hover::before, .spot-card:hover::after { opacity: 1; }
+  .spot-card:hover { transform: translateY(-3px); border-color: rgba(255,255,255,0.12); }
+
+  /* ---------- Misc ---------- */
+  .text-gradient {
+    background: linear-gradient(180deg, #ffffff 0%, #a9adb8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glow-underline {
+    background: linear-gradient(90deg, var(--accent-a), var(--accent-b));
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+  }
+  .fade-up.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .skill-row {
+    border-top: 1px solid rgba(255,255,255,0.07);
+  }
+  .skill-row:last-child { border-bottom: 1px solid rgba(255,255,255,0.07); }
+
+  ::selection { background: rgba(124,108,246,0.35); color: #fff; }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid #8c7bff;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .aurora { animation: none; }
+    .fade-up { transition: none; opacity: 1; transform: none; }
+  }
+</style>
+</head>
+
+<body class="bg-bg text-txt antialiased overflow-x-hidden">
+
+<div class="bg-grid"></div>
+
+<!-- ============ NAV ============ -->
+<header class="fixed top-0 inset-x-0 z-50 nav-blur">
+  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-2 group">
+      <span class="w-7 h-7 rounded-md bg-gradient-to-br from-[#8c7bff] to-[#4d9dff] flex items-center justify-center text-[13px] font-bold text-white shadow-[0_0_16px_rgba(124,108,246,0.5)]">D</span>
+      <span class="font-semibold tracking-tight text-[15px]">Dawit Kassahun</span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-[13.5px] text-muted">
+      <a href="#work" class="hover:text-txt transition-colors">Work</a>
+      <a href="#about" class="hover:text-txt transition-colors">About</a>
+      <a href="#skills" class="hover:text-txt transition-colors">Skills</a>
+      <a href="#contact" class="hover:text-txt transition-colors">Contact</a>
+    </div>
+    <a href="#contact" class="btn-secondary text-[13px] font-medium px-4 py-2 rounded-lg text-txt">
+      Get in touch
+    </a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" class="relative pt-40 pb-28 px-6">
+  <div class="aurora"></div>
+  <div class="relative z-10 max-w-4xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-white/[0.03] text-[12.5px] text-muted mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-[#4d9dff] shadow-[0_0_8px_2px_rgba(77,157,255,0.6)]"></span>
+      Available for new projects
+    </div>
+
+    <h1 class="text-[42px] sm:text-[58px] leading-[1.05] font-semibold tracking-[-0.03em] text-gradient">
+      Design and build things<br class="hidden sm:block" />
+      that feel considered.
+    </h1>
+
+    <p class="mt-6 max-w-xl mx-auto text-[16.5px] sm:text-[17.5px] text-muted leading-relaxed">
+      I'm Dawit Kassahun — a creator working across web design, front-end development,
+      and high-end video editing. I build precise, fast interfaces and cut footage
+      that holds attention.
+    </p>
+
+    <div class="mt-10 flex items-center justify-center gap-3 flex-wrap">
+      <a href="#work" class="btn-primary text-[14px] font-medium px-6 py-3 rounded-lg text-white">
+        View my work
+      </a>
+      <a href="#contact" class="btn-secondary text-[14px] font-medium px-6 py-3 rounded-lg text-txt">
+        Contact me
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WORK ============ -->
+<section id="work" class="relative px-6 py-24 border-t border-border">
+  <div class="max-w-6xl mx-auto">
+    <div class="fade-up flex items-end justify-between flex-wrap gap-4 mb-14">
+      <div>
+        <p class="tag text-[#8c7bff] uppercase mb-3">Selected work</p>
+        <h2 class="text-[30px] sm:text-[36px] font-semibold tracking-[-0.02em]">Featured projects</h2>
+      </div>
+      <p class="text-muted text-[14.5px] max-w-sm">
+        Two live builds — from a restaurant experience to a core web foundation. Shipped, deployed, and in the browser now.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+
+      <!-- Project 1 -->
+      <a href="https://monetox.github.io/Totot-kitfo/" target="_blank" rel="noopener noreferrer"
+         class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
+         onmousemove="handleSpot(event)">
+        <div>
+          <div class="flex items-center justify-between mb-8">
+            <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">01 — restaurant</span>
+            <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Totot Kitfo</h3>
+          <p class="text-muted text-[14.5px] leading-relaxed">
+            A restaurant web experience built around appetite and clarity — clean menu presentation,
+            fast load, and a layout that puts the food first.
+          </p>
+        </div>
+        <div class="mt-8 flex items-center gap-2 flex-wrap">
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">HTML/CSS</span>
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">JavaScript</span>
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">Restaurant UI</span>
+        </div>
+      </a>
+
+      <!-- Project 2 -->
+      <a href="https://monetox.github.io/Monetox/" target="_blank" rel="noopener noreferrer"
+         class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
+         onmousemove="handleSpot(event)">
+        <div>
+          <div class="flex items-center justify-between mb-8">
+            <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">02 — core web</span>
+            <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Dawit Kassahun</h3>
+          <p class="text-muted text-[14.5px] leading-relaxed">
+            The core web project and namesake build — a foundation site focused on
+            structure, performance, and a refined dark interface.
+          </p>
+        </div>
+        <div class="mt-8 flex items-center gap-2 flex-wrap">
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">HTML/CSS</span>
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">JavaScript</span>
+          <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">GitHub Pages</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT / SKILLS ============ -->
+<section id="about" class="relative px-6 py-24 border-t border-border">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-16">
+
+    <div class="fade-up">
+      <p class="tag text-[#4d9dff] uppercase mb-3">About</p>
+      <h2 class="text-[30px] sm:text-[34px] font-semibold tracking-[-0.02em] leading-tight mb-6">
+        One person, three disciplines — kept in sync.
+      </h2>
+      <p class="text-muted text-[15px] leading-relaxed mb-4">
+        I move between the browser and the timeline. On the web, that means clean
+        component structure, deliberate spacing, and interfaces that respond
+        instantly. In video, it means pacing, color, and sound design that hold
+        attention from frame one.
+      </p>
+      <p class="text-muted text-[15px] leading-relaxed">
+        Every project — site or edit — starts from the same question: what's the
+        one thing this needs to say, and how do I remove everything that isn't that.
+      </p>
+    </div>
+
+    <div id="skills" class="fade-up">
+      <p class="tag text-[#4d9dff] uppercase mb-3">Skills</p>
+      <div class="flex flex-col">
+
+        <div class="skill-row flex items-center justify-between py-5">
+          <div>
+            <h4 class="font-medium text-[15px]">Web Design & Development</h4>
+            <p class="text-muted text-[13.5px] mt-1">HTML, CSS, JavaScript, responsive layout, deployment</p>
+          </div>
+          <span class="tag text-faint">01</span>
+        </div>
+
+        <div class="skill-row flex items-center justify-between py-5">
+          <div>
+            <h4 class="font-medium text-[15px]">High-End Video Editing</h4>
+            <p class="text-muted text-[13.5px] mt-1">Pacing, color grading, sound design, motion</p>
+          </div>
+          <span class="tag text-faint">02</span>
+        </div>
+
+        <div class="skill-row flex items-center justify-between py-5">
+          <div>
+            <h4 class="font-medium text-[15px]">UI / Visual Systems</h4>
+            <p class="text-muted text-[13.5px] mt-1">Typography, spacing, dark-mode interfaces, micro-interactions</p>
+          </div>
+          <span class="tag text-faint">03</span>
+        </div>
+
+        <div class="skill-row flex items-center justify-between py-5">
+          <div>
+            <h4 class="font-medium text-[15px]">Modern Digital Creation</h4>
+            <p class="text-muted text-[13.5px] mt-1">Content workflows, branding, asset production</p>
+          </div>
+          <span class="tag text-faint">04</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<section id="contact" class="relative px-6 py-28 border-t border-border overflow-hidden">
+  <div class="aurora" style="top:-420px; opacity:0.55;"></div>
+  <div class="relative z-10 max-w-2xl mx-auto text-center fade-up">
+    <p class="tag text-[#8c7bff] uppercase mb-3">Contact</p>
+    <h2 class="text-[32px] sm:text-[42px] font-semibold tracking-[-0.02em] mb-5">
+      Let's build something worth shipping.
+    </h2>
+    <p class="text-muted text-[15px] mb-10">
+      Open to web projects and video work. Reach out and I'll get back to you shortly.
+    </p>
+    <div class="flex items-center justify-center gap-3 flex-wrap">
+      <a href="mailto:hello@dawitkassahun.dev" class="btn-primary text-[14px] font-medium px-6 py-3 rounded-lg text-white">
+        Say hello
+      </a>
+      <a href="https://github.com/monetox" target="_blank" rel="noopener noreferrer" class="btn-secondary text-[14px] font-medium px-6 py-3 rounded-lg text-txt">
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="relative px-6 py-8 border-t border-border">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-faint">
+    <p>© 2026 Dawit Kassahun. All rights reserved.</p>
+    <div class="flex items-center gap-6">
+      <a href="https://github.com/monetox" target="_blank" rel="noopener noreferrer" class="hover:text-muted transition-colors">GitHub</a>
+      <a href="#top" class="hover:text-muted transition-colors">Back to top ↑</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Spotlight cursor tracking for glow cards
+  function handleSpot(e) {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+    card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+</script>
+
+</body>
+</html>
+
