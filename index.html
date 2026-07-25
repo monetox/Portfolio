@@ -96,7 +96,7 @@
 
   /* ---------- Nav ---------- */
   .nav-blur {
-    background: rgba(8,9,11,0.7);
+    background: rgba(8,9,11,0.85);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--tw-border-opacity, rgba(255,255,255,0.07));
@@ -214,10 +214,10 @@
 
 <!-- ============ NAV ============ -->
 <header class="fixed top-0 inset-x-0 z-50 nav-blur">
-  <nav class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="#top" class="flex items-center gap-2 group">
-      <span class="w-7 h-7 rounded-md bg-gradient-to-br from-[#8c7bff] to-[#4d9dff] flex items-center justify-center text-[13px] font-bold text-white shadow-[0_0_16px_rgba(124,108,246,0.5)]">D</span>
-      <span class="font-semibold tracking-tight text-[15px]">Dawit Kassahun</span>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-2 group min-w-0">
+      <span class="w-7 h-7 rounded-md bg-gradient-to-br from-[#8c7bff] to-[#4d9dff] flex items-center justify-center text-[13px] font-bold text-white shadow-[0_0_16px_rgba(124,108,246,0.5)] shrink-0">D</span>
+      <span class="font-semibold tracking-tight text-[14px] sm:text-[15px] truncate">Dawit Kassahun</span>
     </a>
     <div class="hidden md:flex items-center gap-8 text-[13.5px] text-muted">
       <a href="#work" class="hover:text-txt transition-colors">Work</a>
@@ -225,7 +225,7 @@
       <a href="#skills" class="hover:text-txt transition-colors">Skills</a>
       <a href="#contact" class="hover:text-txt transition-colors">Contact</a>
     </div>
-    <a href="#contact" class="btn-secondary text-[13px] font-medium px-4 py-2 rounded-lg text-txt">
+    <a href="#contact" class="btn-secondary text-[12px] sm:text-[13px] font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-txt shrink-0">
       Get in touch
     </a>
   </nav>
@@ -282,11 +282,14 @@
          class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
          onmousemove="handleSpot(event)">
         <div>
-          <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center justify-between mb-6">
             <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">01 — restaurant</span>
             <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
+          </div>
+          <div class="mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
+            <img src="https://raw.githubusercontent.com/monetox/Portfolio/a56f8d8936af5c483ca06daf33b6563cdbb200df/Tototweb.jpg" alt="Totot Kitfo Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
           <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Totot Kitfo</h3>
           <p class="text-muted text-[14.5px] leading-relaxed">
@@ -306,13 +309,16 @@
          class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
          onmousemove="handleSpot(event)">
         <div>
-          <div class="flex items-center justify-between mb-8">
+          <div class="flex items-center justify-between mb-6">
             <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">02 — core web</span>
             <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Dawit Kassahun</h3>
+          <div class="mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
+            <img src="https://raw.githubusercontent.com/monetox/Portfolio/a56f8d8936af5c483ca06daf33b6563cdbb200df/Monetoxweb.jpg" alt="Monetox Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          </div>
+          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Monetox</h3>
           <p class="text-muted text-[14.5px] leading-relaxed">
             The core web project and namesake build — a foundation site focused on
             structure, performance, and a refined dark interface.
