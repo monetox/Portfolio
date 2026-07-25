@@ -214,51 +214,56 @@
 
 <!-- ============ NAV ============ -->
 <header class="fixed top-0 inset-x-0 z-50 nav-blur">
-  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-    <a href="#top" class="flex items-center gap-2.5 group min-w-0">
-      <!-- Circle avatar container with aspect-square & rounded-full -->
-      <div class="w-8 h-8 rounded-full overflow-hidden border border-border/60 shadow-[0_0_16px_rgba(124,108,246,0.3)] shrink-0 aspect-square">
-        <img src="https://raw.githubusercontent.com/monetox/Portfolio/4bc2011dd8e12d4a61011952004eed2080453599/_O0D5519_1.jpg" alt="Dawit Kassahun" class="w-full h-full object-cover rounded-full" />
-      </div>
-      <span class="font-semibold tracking-tight text-[14px] sm:text-[15px] truncate">Dawit Kassahun</span>
-    </a>
+  <nav class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-start md:justify-between gap-3">
+    <!-- Brand + Button grouped closely on mobile -->
+    <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+      <a href="#top" class="flex items-center gap-2 group min-w-0">
+        <div class="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border border-border/60 shadow-[0_0_16px_rgba(124,108,246,0.3)] shrink-0 aspect-square">
+          <img src="https://raw.githubusercontent.com/monetox/Portfolio/4bc2011dd8e12d4a61011952004eed2080453599/_O0D5519_1.jpg" alt="Dawit Kassahun" class="w-full h-full object-cover rounded-full" />
+        </div>
+        <span class="font-semibold tracking-tight text-[13px] sm:text-[15px] whitespace-nowrap">Dawit Kassahun</span>
+      </a>
+
+      <a href="#contact" class="btn-secondary text-[11px] sm:text-[13px] font-medium px-2.5 py-1 sm:px-4 sm:py-2 rounded-lg text-txt shrink-0">
+        Get in touch
+      </a>
+    </div>
+
+    <!-- Center Navigation for Desktop -->
     <div class="hidden md:flex items-center gap-8 text-[13.5px] text-muted">
       <a href="#work" class="hover:text-txt transition-colors">Work</a>
       <a href="#about" class="hover:text-txt transition-colors">About</a>
       <a href="#skills" class="hover:text-txt transition-colors">Skills</a>
       <a href="#contact" class="hover:text-txt transition-colors">Contact</a>
     </div>
-    <a href="#contact" class="btn-secondary text-[12px] sm:text-[13px] font-medium px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg text-txt shrink-0">
-      Get in touch
-    </a>
   </nav>
 </header>
 
 <!-- ============ HERO ============ -->
-<section id="top" class="relative pt-40 pb-28 px-6">
+<section id="top" class="relative pt-32 sm:pt-40 pb-20 sm:pb-28 px-4 sm:px-6">
   <div class="aurora"></div>
   <div class="relative z-10 max-w-4xl mx-auto text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-white/[0.03] text-[12.5px] text-muted mb-8">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border bg-white/[0.03] text-[11.5px] sm:text-[12.5px] text-muted mb-6 sm:mb-8">
       <span class="w-1.5 h-1.5 rounded-full bg-[#4d9dff] shadow-[0_0_8px_2px_rgba(77,157,255,0.6)]"></span>
       Available for new projects
     </div>
 
-    <h1 class="text-[42px] sm:text-[58px] leading-[1.05] font-semibold tracking-[-0.03em] text-gradient">
+    <h1 class="text-[34px] sm:text-[58px] leading-[1.08] font-semibold tracking-[-0.03em] text-gradient">
       Design and build things<br class="hidden sm:block" />
       that feel considered.
     </h1>
 
-    <p class="mt-6 max-w-xl mx-auto text-[16.5px] sm:text-[17.5px] text-muted leading-relaxed">
+    <p class="mt-5 sm:mt-6 max-w-xl mx-auto text-[15px] sm:text-[17.5px] text-muted leading-relaxed">
       I'm Dawit Kassahun — a creator working across web design, front-end development,
       and high-end video editing. I build precise, fast interfaces and cut footage
       that holds attention.
     </p>
 
-    <div class="mt-10 flex items-center justify-center gap-3 flex-wrap">
-      <a href="#work" class="btn-primary text-[14px] font-medium px-6 py-3 rounded-lg text-white">
+    <div class="mt-8 sm:mt-10 flex items-center justify-center gap-3 flex-wrap">
+      <a href="#work" class="btn-primary text-[13.5px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-white">
         View my work
       </a>
-      <a href="#contact" class="btn-secondary text-[14px] font-medium px-6 py-3 rounded-lg text-txt">
+      <a href="#contact" class="btn-secondary text-[13.5px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-txt">
         Contact me
       </a>
     </div>
@@ -266,14 +271,14 @@
 </section>
 
 <!-- ============ WORK ============ -->
-<section id="work" class="relative px-6 py-24 border-t border-border">
+<section id="work" class="relative px-4 sm:px-6 py-16 sm:py-24 border-t border-border">
   <div class="max-w-6xl mx-auto">
-    <div class="fade-up flex items-end justify-between flex-wrap gap-4 mb-14">
+    <div class="fade-up flex items-end justify-between flex-wrap gap-4 mb-10 sm:mb-14">
       <div>
-        <p class="tag text-[#8c7bff] uppercase mb-3">Selected work</p>
-        <h2 class="text-[30px] sm:text-[36px] font-semibold tracking-[-0.02em]">Featured projects</h2>
+        <p class="tag text-[#8c7bff] uppercase mb-2 sm:mb-3">Selected work</p>
+        <h2 class="text-[26px] sm:text-[36px] font-semibold tracking-[-0.02em]">Featured projects</h2>
       </div>
-      <p class="text-muted text-[14.5px] max-w-sm">
+      <p class="text-muted text-[13.5px] sm:text-[14.5px] max-w-sm">
         Two live builds — from a restaurant experience to a core web foundation. Shipped, deployed, and in the browser now.
       </p>
     </div>
@@ -282,25 +287,25 @@
 
       <!-- Project 1 -->
       <a href="https://monetox.github.io/Totot-kitfo/" target="_blank" rel="noopener noreferrer"
-         class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
+         class="spot-card fade-up group rounded-2xl p-5 sm:p-7 flex flex-col justify-between min-h-[320px] sm:min-h-[340px]"
          onmousemove="handleSpot(event)">
         <div>
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-4 sm:mb-6">
             <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">01 — restaurant</span>
             <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div class="mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
+          <div class="mb-5 sm:mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
             <img src="https://raw.githubusercontent.com/monetox/Portfolio/a56f8d8936af5c483ca06daf33b6563cdbb200df/Tototweb.jpg" alt="Totot Kitfo Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Totot Kitfo</h3>
-          <p class="text-muted text-[14.5px] leading-relaxed">
+          <h3 class="text-[20px] sm:text-[24px] font-semibold tracking-[-0.01em] mb-2 sm:mb-3">Totot Kitfo</h3>
+          <p class="text-muted text-[13.5px] sm:text-[14.5px] leading-relaxed">
             A restaurant web experience built around appetite and clarity — clean menu presentation,
             fast load, and a layout that puts the food first.
           </p>
         </div>
-        <div class="mt-8 flex items-center gap-2 flex-wrap">
+        <div class="mt-6 sm:mt-8 flex items-center gap-2 flex-wrap">
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">HTML/CSS</span>
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">JavaScript</span>
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">Restaurant UI</span>
@@ -309,25 +314,25 @@
 
       <!-- Project 2 -->
       <a href="https://monetox.github.io/Monetox/" target="_blank" rel="noopener noreferrer"
-         class="spot-card fade-up group rounded-2xl p-7 flex flex-col justify-between min-h-[340px]"
+         class="spot-card fade-up group rounded-2xl p-5 sm:p-7 flex flex-col justify-between min-h-[320px] sm:min-h-[340px]"
          onmousemove="handleSpot(event)">
         <div>
-          <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center justify-between mb-4 sm:mb-6">
             <span class="tag px-2.5 py-1 rounded-md border border-border text-muted">02 — core web</span>
             <svg class="w-4 h-4 text-faint group-hover:text-txt group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M7 17L17 7M17 7H8M17 7v9" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <div class="mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
+          <div class="mb-5 sm:mb-6 overflow-hidden rounded-xl border border-border/60 bg-surface2/50 aspect-video">
             <img src="https://raw.githubusercontent.com/monetox/Portfolio/a56f8d8936af5c483ca06daf33b6563cdbb200df/Monetoxweb.jpg" alt="Monetox Preview" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
           </div>
-          <h3 class="text-[24px] font-semibold tracking-[-0.01em] mb-3">Monetox</h3>
-          <p class="text-muted text-[14.5px] leading-relaxed">
+          <h3 class="text-[20px] sm:text-[24px] font-semibold tracking-[-0.01em] mb-2 sm:mb-3">Monetox</h3>
+          <p class="text-muted text-[13.5px] sm:text-[14.5px] leading-relaxed">
             The core web project and namesake build — a foundation site focused on
             structure, performance, and a refined dark interface.
           </p>
         </div>
-        <div class="mt-8 flex items-center gap-2 flex-wrap">
+        <div class="mt-6 sm:mt-8 flex items-center gap-2 flex-wrap">
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">HTML/CSS</span>
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">JavaScript</span>
           <span class="tag px-2.5 py-1 rounded-md bg-white/[0.04] text-muted">GitHub Pages</span>
@@ -339,21 +344,21 @@
 </section>
 
 <!-- ============ ABOUT / SKILLS ============ -->
-<section id="about" class="relative px-6 py-24 border-t border-border">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-16">
+<section id="about" class="relative px-4 sm:px-6 py-16 sm:py-24 border-t border-border">
+  <div class="max-w-6xl mx-auto grid md:grid-cols-[1fr_1.1fr] gap-12 sm:gap-16">
 
     <div class="fade-up">
       <p class="tag text-[#4d9dff] uppercase mb-3">About</p>
-      <h2 class="text-[30px] sm:text-[34px] font-semibold tracking-[-0.02em] leading-tight mb-6">
+      <h2 class="text-[26px] sm:text-[34px] font-semibold tracking-[-0.02em] leading-tight mb-5 sm:mb-6">
         One person, three disciplines — kept in sync.
       </h2>
-      <p class="text-muted text-[15px] leading-relaxed mb-4">
+      <p class="text-muted text-[14px] sm:text-[15px] leading-relaxed mb-4">
         I move between the browser and the timeline. On the web, that means clean
         component structure, deliberate spacing, and interfaces that respond
         instantly. In video, it means pacing, color, and sound design that hold
         attention from frame one.
       </p>
-      <p class="text-muted text-[15px] leading-relaxed">
+      <p class="text-muted text-[14px] sm:text-[15px] leading-relaxed">
         Every project — site or edit — starts from the same question: what's the
         one thing this needs to say, and how do I remove everything that isn't that.
       </p>
@@ -363,34 +368,34 @@
       <p class="tag text-[#4d9dff] uppercase mb-3">Skills</p>
       <div class="flex flex-col">
 
-        <div class="skill-row flex items-center justify-between py-5">
+        <div class="skill-row flex items-center justify-between py-4 sm:py-5">
           <div>
-            <h4 class="font-medium text-[15px]">Web Design & Development</h4>
-            <p class="text-muted text-[13.5px] mt-1">HTML, CSS, JavaScript, responsive layout, deployment</p>
+            <h4 class="font-medium text-[14px] sm:text-[15px]">Web Design & Development</h4>
+            <p class="text-muted text-[12.5px] sm:text-[13.5px] mt-1">HTML, CSS, JavaScript, responsive layout, deployment</p>
           </div>
           <span class="tag text-faint">01</span>
         </div>
 
-        <div class="skill-row flex items-center justify-between py-5">
+        <div class="skill-row flex items-center justify-between py-4 sm:py-5">
           <div>
-            <h4 class="font-medium text-[15px]">High-End Video Editing</h4>
-            <p class="text-muted text-[13.5px] mt-1">Pacing, color grading, sound design, motion</p>
+            <h4 class="font-medium text-[14px] sm:text-[15px]">High-End Video Editing</h4>
+            <p class="text-muted text-[12.5px] sm:text-[13.5px] mt-1">Pacing, color grading, sound design, motion</p>
           </div>
           <span class="tag text-faint">02</span>
         </div>
 
-        <div class="skill-row flex items-center justify-between py-5">
+        <div class="skill-row flex items-center justify-between py-4 sm:py-5">
           <div>
-            <h4 class="font-medium text-[15px]">UI / Visual Systems</h4>
-            <p class="text-muted text-[13.5px] mt-1">Typography, spacing, dark-mode interfaces, micro-interactions</p>
+            <h4 class="font-medium text-[14px] sm:text-[15px]">UI / Visual Systems</h4>
+            <p class="text-muted text-[12.5px] sm:text-[13.5px] mt-1">Typography, spacing, dark-mode interfaces, micro-interactions</p>
           </div>
           <span class="tag text-faint">03</span>
         </div>
 
-        <div class="skill-row flex items-center justify-between py-5">
+        <div class="skill-row flex items-center justify-between py-4 sm:py-5">
           <div>
-            <h4 class="font-medium text-[15px]">Modern Digital Creation</h4>
-            <p class="text-muted text-[13.5px] mt-1">Content workflows, branding, asset production</p>
+            <h4 class="font-medium text-[14px] sm:text-[15px]">Modern Digital Creation</h4>
+            <p class="text-muted text-[12.5px] sm:text-[13.5px] mt-1">Content workflows, branding, asset production</p>
           </div>
           <span class="tag text-faint">04</span>
         </div>
@@ -401,29 +406,29 @@
 </section>
 
 <!-- ============ CONTACT / FOOTER ============ -->
-<section id="contact" class="relative px-6 py-28 border-t border-border overflow-hidden">
+<section id="contact" class="relative px-4 sm:px-6 py-20 sm:py-28 border-t border-border overflow-hidden">
   <div class="aurora" style="top:-420px; opacity:0.55;"></div>
   <div class="relative z-10 max-w-2xl mx-auto text-center fade-up">
     <p class="tag text-[#8c7bff] uppercase mb-3">Contact</p>
-    <h2 class="text-[32px] sm:text-[42px] font-semibold tracking-[-0.02em] mb-5">
+    <h2 class="text-[28px] sm:text-[42px] font-semibold tracking-[-0.02em] mb-4 sm:mb-5">
       Let's build something worth shipping.
     </h2>
-    <p class="text-muted text-[15px] mb-10">
+    <p class="text-muted text-[14px] sm:text-[15px] mb-8 sm:mb-10">
       Open to web projects and video work. Reach out and I'll get back to you shortly.
     </p>
     <div class="flex items-center justify-center gap-3 flex-wrap">
-      <a href="mailto:hello@dawitkassahun.dev" class="btn-primary text-[14px] font-medium px-6 py-3 rounded-lg text-white">
+      <a href="mailto:hello@dawitkassahun.dev" class="btn-primary text-[13.5px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-white">
         Say hello
       </a>
-      <a href="https://github.com/monetox" target="_blank" rel="noopener noreferrer" class="btn-secondary text-[14px] font-medium px-6 py-3 rounded-lg text-txt">
+      <a href="https://github.com/monetox" target="_blank" rel="noopener noreferrer" class="btn-secondary text-[13.5px] sm:text-[14px] font-medium px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-txt">
         GitHub
       </a>
     </div>
   </div>
 </section>
 
-<footer class="relative px-6 py-8 border-t border-border">
-  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] text-faint">
+<footer class="relative px-4 sm:px-6 py-6 sm:py-8 border-t border-border">
+  <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[12px] sm:text-[13px] text-faint">
     <p>© 2026 Dawit Kassahun. All rights reserved.</p>
     <div class="flex items-center gap-6">
       <a href="https://github.com/monetox" target="_blank" rel="noopener noreferrer" class="hover:text-muted transition-colors">GitHub</a>
